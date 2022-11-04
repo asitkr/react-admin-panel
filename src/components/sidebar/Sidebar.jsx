@@ -12,12 +12,15 @@ import PsychologyAltOutlinedIcon from '@mui/icons-material/PsychologyAltOutlined
 import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
         <div className='sidebar'>
             <div className="top">
-                <div className="logo">ashitadmin</div>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                    <span className="logo">ashitadmin</span>
+                </Link>
             </div>
             <hr />
             <div className="center">
@@ -29,14 +32,19 @@ const Sidebar = () => {
                     </li>
 
                     <p className="title">LISTS</p>
-                    <li>
-                        <PersonOutlinedIcon className="icon" />
-                        <span>Users</span>
-                    </li>
-                    <li>
-                        <StoreIcon className="icon" />
-                        <span>Products</span>
-                    </li>
+                    <Link to="/users" style={{ textDecoration: "none" }}>
+                        <li>
+                            <PersonOutlinedIcon className="icon" />
+                            <span>Users</span>
+                        </li>
+                    </Link>
+
+                    <Link to="/products" style={{ textDecoration: "none" }}>
+                        <li>
+                            <StoreIcon className="icon" />
+                            <span>Products</span>
+                        </li>
+                    </Link>
                     <li>
                         <CreditCardIcon className="icon" />
                         <span>Orders</span>
